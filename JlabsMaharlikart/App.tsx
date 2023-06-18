@@ -16,19 +16,22 @@ import {
   View,
 } from 'react-native';
 import Welcome from './app/screens/Welcome';
-import AppText from './app/components/AppText';
 import Main from './app/screens/Main';
 import {CategoryProvider} from './app/providers/CategoryProvider';
 import SubCategory from './app/screens/SubCategory';
+import {NavigationContainer} from '@react-navigation/native';
+
+import navigationTheme from './app/navigation/navigationTheme';
+import AppNavigator from './app/navigation/AppNavigator';
 
 export default function App() {
   return (
     <>
-      {/* <Welcome /> */}
-      <CategoryProvider>
-        {/* <Main /> */}
-        <SubCategory />
-      </CategoryProvider>
+      <NavigationContainer theme={navigationTheme}>
+        <CategoryProvider>
+          <AppNavigator />
+        </CategoryProvider>
+      </NavigationContainer>
     </>
   );
 }

@@ -1,21 +1,31 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
-import React from 'react';
+import {StyleSheet, View, Image, ScrollView} from 'react-native';
+import React, {useState} from 'react';
 import AppText from '../components/AppText';
 
 import colors from '../config/colors';
 import SubItem from '../components/SubItem';
+import AppTextInput from '../components/AppTextInput';
 
-const SubCategory = () => {
+const SubCategory = ({route}) => {
+  const [searchWord, setSearchWord] = useState('');
+  const subCategory = route.params;
+
   return (
     <ScrollView>
       <Image
         style={styles.image}
         source={{
-          uri: 'https://maharlikart-prod.s3.ap-southeast-1.amazonaws.com/category/standard/categ-asianmarket.jpg',
+          uri: subCategory.image,
         }}
       />
       <View style={styles.subCategoryContainer}>
-        <AppText style={styles.title}>Asian Mart</AppText>
+        <AppTextInput
+          placeholder="Find something you like"
+          icon="search"
+          onChangeText={text => setSearchWord(text)}
+          maxLength={33}
+        />
+        <AppText style={styles.title}>{subCategory.name}</AppText>
         <AppText style={styles.description}>
           Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Praesent porta pellentesque elit pulvinar iaculis. Lorem ipsum dolor
@@ -23,10 +33,7 @@ const SubCategory = () => {
         </AppText>
         <AppText style={styles.subtitle}>Products</AppText>
         <View>
-          <SubItem
-            title="Asian Instant Noodles"
-            image={require('../assets/placeholder.jpg')}
-          />
+          <SubItem subCategories={subCategory.sub_categories} />
         </View>
       </View>
     </ScrollView>
@@ -44,7 +51,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: colors.primary,
     fontWeight: '700',
-    marginTop: 50,
   },
   description: {
     fontSize: 18,

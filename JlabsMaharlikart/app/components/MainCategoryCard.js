@@ -1,19 +1,22 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 import colors from '../config/colors';
 import AppText from './AppText';
 
-const MainCategoryCard = ({title, image}) => {
+const MainCategoryCard = ({title, image, onPress}) => {
   return (
-    <View style={styles.cardContainer}>
-      <Image source={{uri: image}} style={styles.image} />
-      <View style={styles.content}>
-        <AppText style={{fontSize: 24, color: colors.black, fontWeight: '700'}}>
-          {title}
-        </AppText>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.cardContainer}>
+        <Image source={{uri: image}} style={styles.image} />
+        <View style={styles.content}>
+          <AppText
+            style={{fontSize: 24, color: colors.black, fontWeight: '700'}}>
+            {title}
+          </AppText>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -23,7 +26,6 @@ const styles = StyleSheet.create({
   cardContainer: {
     backgroundColor: colors.white,
     borderRadius: 15,
-    marginBottom: 20,
     overflow: 'hidden',
   },
   image: {
