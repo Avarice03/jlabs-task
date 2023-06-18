@@ -8,7 +8,7 @@ The app allows users to navigate between parent and sub-categories, perform sear
 ## Installation
 
 1. Clone the repository: git clone <repository-url>
-2. Navigate to the project directory: cd react-native-sample-app
+2. Navigate to the project directory: cd JlabsMaharlikart/
 3. Install dependencies: npm install
 
 ## Running the App
