@@ -1,11 +1,11 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import ProductsNavigator from './ProductsNavigator';
-import History from '../screens/History';
+import HistoryNavigator from './HistoryNavigator';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
-const ApppNavigator = () => (
+const AppNavigator = () => (
   <Tab.Navigator screenOptions={{headerShown: false}}>
     <Tab.Screen
       name="Products"
@@ -18,7 +18,7 @@ const ApppNavigator = () => (
     />
     <Tab.Screen
       name="History"
-      component={History}
+      component={HistoryNavigator}
       options={{
         tabBarIcon: ({color, size}) => (
           <Icon name="history" color={color} size={size} />
@@ -28,4 +28,4 @@ const ApppNavigator = () => (
   </Tab.Navigator>
 );
 
-export default ApppNavigator;
+export default AppNavigator;
