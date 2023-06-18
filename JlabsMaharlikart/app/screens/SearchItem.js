@@ -3,10 +3,10 @@ import React, {useEffect, useState} from 'react';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import axios from 'axios';
-
 import colors from '../config/colors';
 import SubItem from '../components/SubItem';
 
+// Searched Items page for Maharlikart
 const SearchItem = ({route}) => {
   const item = route.params;
   const [results, setResults] = useState([]);
@@ -32,7 +32,6 @@ const SearchItem = ({route}) => {
       </Screen>
     );
   }
-  console.log(results);
 
   return (
     <Screen>

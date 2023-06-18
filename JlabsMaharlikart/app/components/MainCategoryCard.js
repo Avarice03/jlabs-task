@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-
 import colors from '../config/colors';
 import AppText from './AppText';
 
+// Card component for main products page
 const MainCategoryCard = ({title, image, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>

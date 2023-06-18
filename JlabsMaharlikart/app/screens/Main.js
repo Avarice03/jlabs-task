@@ -1,6 +1,5 @@
 import {StyleSheet, FlatList, Text} from 'react-native';
 import React, {useContext, useState} from 'react';
-
 import MainCategoryCard from '../components/MainCategoryCard';
 import Screen from '../components/Screen';
 import ListSeparator from '../components/ListSeparator';
@@ -9,6 +8,7 @@ import routes from '../navigation/routes';
 import {CategoryContext} from '../providers/CategoryProvider';
 import {HistoryContext} from '../providers/HistoryProvider';
 
+// Main products page for Maharlikart
 const Main = ({navigation}) => {
   const [categories] = useContext(CategoryContext);
   const [history, setHistory] = useContext(HistoryContext);

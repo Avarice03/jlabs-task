@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const CategoryContext = createContext();
 
-// Provider for users array
+// Provider for categories array from API
 export const CategoryProvider = props => {
   const [categories, setCategories] = useState([]);
 

@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import AppText from './AppText';
-
 import colors from '../config/colors';
 
+// Subitem Component for  SubCategory pages
 const SubItem = ({subCategories}) => {
   return (
     <View style={styles.subItemContainer}>

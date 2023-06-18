@@ -2,7 +2,7 @@ import {createContext, useState} from 'react';
 
 export const HistoryContext = createContext();
 
-// Provider for users array
+// Provider for history array
 export const HistoryProvider = props => {
   const [history, setHistory] = useState([]);
 

@@ -1,8 +1,8 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-
 import colors from '../config/colors';
 
+// Welcome page for Maharlikart
 const Welcome = () => {
   return (
     <View style={styles.background}>

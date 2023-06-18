@@ -2,12 +2,12 @@ import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useContext} from 'react';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
-
 import routes from '../navigation/routes';
 import colors from '../config/colors';
 import {HistoryContext} from '../providers/HistoryProvider';
 import ListSeparator from '../components/ListSeparator';
 
+// Search History page for Maharlikart
 const History = ({navigation}) => {
   const [history] = useContext(HistoryContext);
   if (!history) {
@@ -20,7 +20,9 @@ const History = ({navigation}) => {
       <View style={styles.historyContainer}>
         <FlatList
           data={history}
-          keyExtractor={item => item.name.toString()}
+          keyExtractor={item =>
+            `${item.name.toString()}-${item.time.toString()} `
+          }
           renderItem={({item}) => (
             <View style={styles.item}>
               <View style={{marginRight: 20}}>
